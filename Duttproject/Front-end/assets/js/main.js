@@ -278,6 +278,13 @@
     signupForm.style.display = "block";
     loginForm.style.display = "none";
   }
+
+  const registerUser = document.getElementById("register-user");
+  registerUser.addEventListener("click", function(e){
+    e.preventDefault();
+    signupForm.style.display = "block";
+    loginForm.style.display = "none"
+  })
   
 
 })()

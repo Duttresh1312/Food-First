@@ -53,7 +53,6 @@
                       </li>';
               }
             ?>
-            
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -124,9 +123,57 @@
     <div class="container text-left position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Welcome to <span class="color_o">food first</span></h1>
       <h2>Find Restaurants, Specials and Offers for free.<br> your Food from your favorite hotels & restaurants</h2>
-      <!-- <a href="" class="btn-get-started scrollto">Login</a>
-      <a href="" class="btn-get-started scrollto">Sign up</a> -->
-    </div>
+
+      <?php
+              if($loggedin){
+                echo '';
+              }
+              else{
+                echo '<div class="dropdown-center">
+                <a class="ms-auto me-auto btn btn-lg bg_orange text-white dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="modal" data-bs-target="#RegisterModal" id="register-user">As User</a></li>
+                    <li><a class="dropdown-item fs-5 fw-bold" href="">As Restaurant</a></li>
+                  </ul>
+              </div>';
+              }
+      ?>
+      
+      <!-- REGISTER FORM  -->
+      <div class="modal fade" id="RegisterModal" data-bs-backdrop="static" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark px-4">
+                <div class="ms-auto mt-2">
+                    <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
+                        data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x text-25 fw-bold"></i>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                  <form id="register-form"  enctype="multipart/form-data" method="post">
+                        <h1 class="modal-title pb-2" id="exampleModalLabel">Register</h1>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" id="inputUsername3" placeholder="your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" name="email" id="exampleFormControlInput3"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
+                        </div>
+                        <div id="btnClass" class="px-4 text-center mb-4">
+                            <button type="button" id="registerClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
+                        </div>
+                  </form> 
+                </div>
+            </div>
+        </div>
+      </div>
   </section>
 
   <section class="featured-services bg_grey py-4" id="restaurant">
@@ -310,8 +357,9 @@
       </div>
     </div>
   </section>
-
+  
   <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
   <script src="handle.js"></script>
 </body>
