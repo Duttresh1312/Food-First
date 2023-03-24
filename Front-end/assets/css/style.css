@@ -369,37 +369,164 @@ a {
   color: #fff;
 }
 /*****************************************************/
-.featured-services .icon-box {
-  padding: 30px;
+/*********************Menu column first******************************/
+.card{
+  background-color: #ff8c00;
+  color: white;
+}
+.add-btn{
+  width: 60px;
+  height: 30px;
+  background-color: #37332a;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu{
+  background-color: #37332a !important;
+}
+.red_menu {
+  background-color: #ff8c00 !important;
+  border-top-left-radius: 20px;
+}
+.red_menu .nav-link.active{
+  background-color: #37332a !important;
+  color: white !important;
+}
+.red_menu .nav-link{
+  font-size: 1.2em;
+  font-weight: 500;
+  color: white;
+}
+/******************Item Disc Column second**********************/
+.text_img_banner {
   position: relative;
-  overflow: hidden;
-  background: #37332a;
-  box-shadow: 5px 25px 60px rgb(77 33 47 / 5%);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  z-index: 1;
 }
-.featured-services .icon-box::before {
-  content: "";
+.text_banner {
   position: absolute;
-  background: #cbe0fb;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 100%;
-  transition: all 0.3s;
-  z-index: -1;
+  top: 8px;
+  left: 25px;
 }
-.featured-services .icon-box:hover::before {
-  background: #ff8c00;
-  top: 0;
-  border-radius: 0px;
+.text_70{
+  font-size: 70px !important;
 }
-.featured-services .icon-box:hover .title a, .featured-services .icon-box:hover .description {
-  color: #fff;
+.scrollspy-example {
+  position: relative;
+  height: 630px;
+  overflow: auto;
 }
-.featured-services .icon-box:hover h2 {
-  color: #fff;
+@media (max-width: 1150px) {
+  .text_70{
+    font-size: 45px !important;
+  }
+  .text_30 {
+    font-size: 25px;
+  }
+  .text_22 {
+    font-size: 20px;
+  }
+  .text_20 {
+    font-size: 18px;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/*******************CheckOut Column third************************/
+.count_chip {
+  background-color: #d6d6d6;
+  padding: 6px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.edit_btn {
+  background-color: #37332a;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.input-number {
+  max-width: 30px;
+  font-weight: bold;
+  background-color: transparent !important;
+}
+/*****************Form Modal Css*************************/
+.modal-dialog {
+  min-width: 600px !important;
+}
+@media (max-width: 700px) {
+  .modal-dialog {
+    min-width: auto !important;
+  }
+}
+.circle-btn{
+  width: 35px;
+  height: 35px;
+  background-color: #37332a;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-btn-in-modal{
+  width: 45px;
+  height: 45px;
+  background-color: #e9e7e7;
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  position: relative;
+}
+.form-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.toggle_div ul li a {
+  background-color: #d6d6d6 !important;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4A4A4A;
+}
+.toggle_div ul li a.active{
+  background-color: #FF5253 !important;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.form-group input {
+  height: 50px;
+}
+.form-switch .form-check-input {
+  width: 50px;
+}
+.form-check-input {
+  height: 30px;
+}
+.checkout_btn {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+/**************************/
+.back_btn {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.back_btn1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 /********************about us************************/
 .about-us {
@@ -423,7 +550,7 @@ a {
 }
 /********************scroll-special-section**********************/
 .scrollspy-example {
-  height: 250px;
+  height: 365px;
   overflow-y: scroll;
 }
 .list-group-item {

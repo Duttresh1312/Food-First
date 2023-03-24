@@ -285,6 +285,24 @@
     signupForm.style.display = "block";
     loginForm.style.display = "none"
   })
+
+  function down(min) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) - 1;
+      if (document.getElementById("myNumber").value <= parseInt(min)) {
+        document.getElementById("myNumber").value = min;
+    }
+  }
+  function up(max) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;
+      if (document.getElementById("myNumber").value >= parseInt(max)) {
+          document.getElementById("myNumber").value = max;
+      }
+  }
+  
+  function Del() {
+    document.getElementById("orderCard").remove();
+  }
+  
   
 
 })()
