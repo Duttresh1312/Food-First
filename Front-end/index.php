@@ -133,11 +133,8 @@
               }
               else{
                 echo '<div class="dropdown-center">
-                <a class="ms-auto me-auto btn btn-lg bg_orange text-white dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="modal" data-bs-target="#RegisterModal" id="register-user">As User</a></li>
-                    <li><a class="dropdown-item fs-5 fw-bold" href="">As Restaurant</a></li>
-                  </ul>
+                  <button type="button" class="btn btn-outline-warning btn-lg"  href="" data-bs-toggle="modal" data-bs-target="#RegisterModal" id="register-user">Register As user</button>
+                  <a href="restaurant_portal.php"><button type="button" class="btn btn-outline-warning btn-lg">Register As Restaurant</button></a>
               </div>';
               }
       ?>

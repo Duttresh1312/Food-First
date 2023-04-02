@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
@@ -62,51 +62,111 @@
       <h1>Welcome to <span class="color_o">food first</span></h1>
       <h2>Add Your Restaurants Here<br> Register and get started!!</h2>
 
-      <?php
-              if($loggedin){
-                echo '';
-              }
-              else{
-                echo '<button type="button" class="btn btn-outline-warning btn-lg">Register
-                </button>';
-              }
-      ?>
-      
+      <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal"
+        data-bs-target="#RestaurantRegisterModal">Register
+      </button>
+
       <!-- REGISTER FORM  -->
-      <div class="modal fade" id="RegisterModal" data-bs-backdrop="static" tabindex="-1"
+      <div class="modal fade" id="RestaurantRegisterModal" data-bs-backdrop="static" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark px-4">
-                <div class="ms-auto mt-2">
-                    <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
-                        data-bs-dismiss="modal" aria-label="Close">
-                        <i class="bi bi-x text-25 fw-bold"></i>
-                    </button>
-                </div>
-                <div class="modal-body pt-0">
-                  <form id="restaurant-register-form"  enctype="multipart/form-data" method="post">
-                        <h1 class="modal-title pb-2" id="exampleModalLabel">Register</h1>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Username</label>
-                            <input type="text" class="form-control" name="username" id="inputUsername3" placeholder="your name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" name="email" id="exampleFormControlInput3"
-                                placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
-                        </div>
-                        <div id="btnClass" class="px-4 text-center mb-4">
-                            <button type="button" id="restaurantRegisterClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
-                        </div>
-                  </form> 
-                </div>
+          <div class="modal-content bg-dark px-4">
+            <div class="ms-auto mt-2">
+              <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
+                data-bs-dismiss="modal" aria-label="Close">
+                <i class="bi bi-x text-25 fw-bold"></i>
+              </button>
             </div>
+            <div class="modal-body pt-0">
+                <!-- Restaurant form goes here -->
+                <form id="restaurant-register-form" enctype="multipart/form-data" method="post">
+                  <h3 class="modal-title pb-2" id="exampleModalLabel">Restaurant Registration</h3>
+                  <div class="mb-3">
+                    <label for="restaurantName">Restaurant Name</label>
+                    <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="restaurantEmail">Restaurant Email</label>
+                    <input type="email" class="form-control" id="restaurantEmail"
+                      placeholder="Enter restaurant Email Id" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="restaurantContact">Restaurant Contact Details</label>
+                    <input type="text" class="form-control" id="restaurantContact"
+                      placeholder="Enter restaurant Contact Details" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="restaurantAddress">Restaurant Address</label>
+                    <textarea type="text" class="form-control" id="restaurantAddress"
+                      placeholder="Enter restaurant address" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="restaurantTiming">Restaurant Timing:</label></br>
+                    <label for="restaurantTiming">From</label>
+                    <input type="time" class="form-control" id="restaurantTiming"
+                      placeholder="Enter restaurant timing information" required>
+                    <label for="restaurantTiming">To</label>
+                    <input type="time" class="form-control" id="restaurantTiming"
+                      placeholder="Enter restaurant timing information" required>
+                  </div>
+                  <div id="btnClass" class="px-4 text-center mb-4">
+                    <button type="button" id="restaurantRegisterClass"
+                      class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
+                  </div>
+                </form>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- <div class="modal fade" id="RestaurantRegisterModal" tabindex="-1" aria-labelledby="RestaurantModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark px-4">
+            <div class="modal-header">
+              <h5 class="modal-title" id="RestaurantRegisterModal">Restaurant Registeration Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+            <div class="modal-body">
+               Restaurant form goes here 
+              <form id="restaurant-register-form" enctype="multipart/form-data" method="post">
+                <div class="mb-3">
+                  <label for="restaurantName">Restaurant Name</label>
+                  <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name">
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantEmail">Restaurant Email</label>
+                  <input type="text" class="form-control" id="restaurantEmail" placeholder="Enter restaurant Email Id">
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantContact">Restaurant Contact Details</label>
+                  <input type="text" class="form-control" id="restaurantContact"
+                    placeholder="Enter restaurant Contact Details">
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantAddress">Restaurant Address</label>
+                  <input type="text" class="form-control" id="restaurantAddress" placeholder="Enter restaurant address">
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantTiming">Restaurant Timing</label>
+                  <input type="text" class="form-control" id="restaurantTiming"
+                    placeholder="Enter restaurant timing information">
+                </div>
+                <div id="btnClass" class="px-4 text-center mb-4">
+                  <button type="button" id="restaurantRegisterClass"
+                    class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
   </section>
 
   <section class="pt-4 footer" id="contact">
@@ -137,9 +197,11 @@
         <div class="col-md-6 col-lg-6 px-3 footer-about-us">
           <p class="footer-title color_w">About Us</p>
           <p class="color_w text_18">
-           Welcome to our food ordering site! We're passionate about delivering the best possible dining experience to our customers, 
-           whether they're ordering online or dining in at one of our restaurants.We provide you with facilities that save you time and 
-           ease your hectic schedule. Enjoy any meal of your day with our service.
+            Welcome to our food ordering site! We're passionate about delivering the best possible dining experience to
+            our customers,
+            whether they're ordering online or dining in at one of our restaurants.We provide you with facilities that
+            save you time and
+            ease your hectic schedule. Enjoy any meal of your day with our service.
           </p>
         </div>
         <div class="col-md-6 col-lg-2 Links">
@@ -159,7 +221,7 @@
       </div>
     </div>
   </section>
-  
+
   <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
