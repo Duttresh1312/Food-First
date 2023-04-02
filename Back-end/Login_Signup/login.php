@@ -10,17 +10,16 @@ $_SESSION['loggedin'] = false;
     }
 
     if($email && $password){
-        $sql = mysqli_query($conn, "SELECT * FROM user WHERE email = '" . $email. "' and password = '" .($password). "'");
+        $sql = mysqli_query($conn, "SELECT * FROM user WHERE email = '" .$email. "' and password = '".($password). "'");
+        echo $sql;
         if(mysqli_num_rows($sql) > 0){
           
             $_SESSION['loggedin'] = true;
             echo "success";     
-        else{
+        }else{
             echo "$email - This email not Exist!";
         }
-
       }
 
-    }
 
 ?>

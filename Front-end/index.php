@@ -69,7 +69,8 @@
                     </button>
                 </div>
                 <div class="modal-body pt-0">
-                    <form id="login-form">
+
+                    <form id="login-form" method="post">
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Login</h1>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" >Email address</label>
@@ -88,7 +89,7 @@
                         </div>
                     </form>
 
-                    <form id="signup-form">
+                    <form id="signup-form" method="post">
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Sign Up</h1>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Username</label>
@@ -110,6 +111,7 @@
                             <button type="submit" id="signupClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Signup</button>
                         </div>
                     </form>
+
                 </div>
                 
             </div>
@@ -156,19 +158,19 @@
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Register</h1>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Username</label>
-                            <input type="text" class="form-control" name="username" id="inputUsername3" placeholder="your name">
+                            <input type="text" class="form-control" name="username" id="inputUsername3" placeholder="your name" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Email address</label>
                             <input type="email" class="form-control" name="email" id="exampleFormControlInput3"
-                                placeholder="name@example.com">
+                                placeholder="name@example.com" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password" required>
                         </div>
                         <div id="btnClass" class="px-4 text-center mb-4">
-                            <button type="button" id="registerClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
+                            <button type="submit" id="registerClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
                         </div>
                   </form> 
                 </div>

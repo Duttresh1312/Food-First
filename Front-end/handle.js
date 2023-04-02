@@ -4,12 +4,14 @@ const logoutBtn = document.getElementById("logoutClass");
 const registerBtn = document.getElementById("registerClass");
 
 registerBtn.addEventListener('click', () =>{
+    console.log("register clicked");
     let xhr = new XMLHttpRequest();
     xhr.open("POST", '../Back-end/Login_Signup/signup.php', true);
     xhr.onload = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
-                window.location = "index.php";
+                let data = xhr.responseText;
+                console.log(data);
             }
         }
     };
@@ -17,17 +19,17 @@ registerBtn.addEventListener('click', () =>{
     xhr.send(formData);
 });
 
-const signupform = document.querySelector(".signup-form");
+const signupform = document.getElementById("signup-form");
 
 signupBtn.onclick = () =>{
+    console.log("signup clicked");
     let xhr = new XMLHttpRequest();
     xhr.open("POST", '../Back-end/Login_Signup/signup.php', true);
     xhr.onload = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
-                let data = xhr.response;
+                let data = xhr.responseText;
                 console.log(data);
-                window.location = "index.php";
             }
         }
     };
@@ -35,17 +37,17 @@ signupBtn.onclick = () =>{
     xhr.send(formData);
 };
 
-const loginForm = document.querySelector(".login-form");
+const loginForm = document.getElementById("login-form");
 
 loginBtn.onclick = ()=>{
+    console.log("login clicked");
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "../Back-end/Login_Signup/login.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
-              let data = xhr.response;
+              var data = xhr.responseText;
               console.log(data);
-              windows.location = "index.php";
           }
       }
     }
