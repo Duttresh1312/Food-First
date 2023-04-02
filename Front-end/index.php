@@ -33,7 +33,7 @@
         <nav id="navbar" class="navbar">
           <ul class="mx-2">
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#restaurant">Restaurant</a></li>
+            <li><a class="nav-link scrollto" href="#menu-user">Restaurant</a></li>
             <li><a class="nav-link scrollto" href="#about-us">About</a></li>
             <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -69,16 +69,16 @@
                     </button>
                 </div>
                 <div class="modal-body pt-0">
-                    <form id="login-form" enctype="multipart/form-data" method="post">
+                    <form id="login-form">
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Login</h1>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" >Email address</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com" name="logemail" required>
+                                placeholder="name@example.com" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword1" name="logpassword" placeholder="Password" required>
+                            <input type="password" class="form-control" id="inputPassword1" name="password" placeholder="Password" required>
                         </div>
                         <div>
                             <p>Don't have an account? <a href="" id="signup-link">Sign up</a></p>
@@ -87,26 +87,27 @@
                             <button type="submit" id="loginClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Login</button>
                         </div>
                     </form>
-                    <form id="signup-form"  enctype="multipart/form-data" method="post">
+
+                    <form id="signup-form">
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Sign Up</h1>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Username</label>
-                            <input type="text" class="form-control" name="username" id="inputUsername2" placeholder="your name">
+                            <input type="text" class="form-control" name="username" id="inputUsername2" placeholder="your name" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Email address</label>
                             <input type="email" class="form-control" name="email" id="exampleFormControlInput2"
-                                placeholder="name@example.com">
+                                placeholder="name@example.com" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="inputPassword2" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="inputPassword2" placeholder="Password" required>
                         </div>
                         <div>
                             <p>Already have an account? <a href="" id="login-link">Login</a></p>
                         </div>
                         <div id="btnClass" class="px-4 text-center mb-4">
-                            <button type="button" id="signupClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Signup</button>
+                            <button type="submit" id="signupClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Signup</button>
                         </div>
                     </form>
                 </div>
@@ -177,20 +178,21 @@
   </section>
 
   <!---------Menu--------->
-  <section class="container-fluid py-4 d-md-block d-flex menu">
+  <section class="container-fluid py-4 d-md-block d-flex menu" id="menu-user">
       <div class="container py-4">
         <h1 class="color_o fw-bold">Find Your Food</h1>
         <p class="text-o">FEATURED RESTAURANT MENU</p>
         <div class="dropdown-center">
-          <a class="ms-auto me-auto btn btn-lg bg_orange text-white dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">Select restaurant</a>
+          <a class="ms-auto me-auto btn btn-lg bg_orange text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Select Restaurant</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="modal" data-bs-target="#dhaka-mukki" type="button">Dhaka Mukki</a></li>
-              <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="modal" data-bs-target="#kingsman">Kingsman</a></li>
+              <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="collapse" data-bs-target="#dhaka-mukki" type="button" aria-expanded="false">Dhaka Mukki</a></li>
+              <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="collapse" data-bs-target="#kingsman" type="button" aria-expanded="false">Kingsman</a></li>
             </ul>
         </div>
       </div>
 
       <!--------Restaurant Menu to user--------->
+      <div class="collapse" id="dhaka-mukki">
       <div class="row">
         <div class="col-md-6 col-lg-2 py-2">
           <div id="list-example" class="list-group red_menu">
@@ -549,6 +551,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     </section>
 
