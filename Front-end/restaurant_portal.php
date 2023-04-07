@@ -16,7 +16,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -119,8 +118,8 @@
                 </div>
                 <div class="mb-3">
                   <label for="restaurantEmail">Restaurant password</label>
-                  <input type="password" class="form-control" id="restaurantPassword" placeholder="Enter restaurant Password"
-                    required>
+                  <input type="password" class="form-control" id="restaurantPassword"
+                    placeholder="Enter restaurant Password" required>
                 </div>
                 <div class="mb-3">
                   <label for="restaurantContact">Restaurant Contact Details</label>
@@ -134,16 +133,16 @@
                 </div>
                 <div class="mb-3">
                   <label for="restaurantGSTIN">GST Number</label>
-                  <input type="text" class="form-control" id="restaurantGSTIN"
-                    placeholder="Enter restaurant gst" required></input>
+                  <input type="text" class="form-control" id="restaurantGSTIN" placeholder="Enter restaurant gst"
+                    required></input>
                 </div>
                 <div class="mb-3">
                   <label for="restaurantTiming">Restaurant Timing:</label></br>
                   <label for="restaurantTiming">From</label>
-                  <input type="time" class="form-control" id="restaurantTiming"
+                  <input type="time" class="form-control" id="restaurantTiming1"
                     placeholder="Enter restaurant timing information" required>
                   <label for="restaurantTiming">To</label>
-                  <input type="time" class="form-control" id="restaurantTiming"
+                  <input type="time" class="form-control" id="restaurantTiming2"
                     placeholder="Enter restaurant timing information" required>
                 </div>
                 <div id="btnClass" class="px-4 text-center mb-4">
@@ -156,8 +155,77 @@
         </div>
       </div>
   </section>
- 
-  
+
+  <section class="container-fluid py-4 d-md-block d-flex menu" id="menu-res">
+    <?php
+              if($loggedin){
+                echo '<div class="container py-4">
+                  <h1 class="color_o fw-bold">Add Your Food Menu</h1>
+                  <p class="text-o">RESTAURANT MENU</p>
+                  <button class="ms-auto me-auto btn btn-lg bg_orange text-white" data-bs-target="#RestaurantMenuModal" data-bs-toggle="modal">Add / Edit Menus</button>
+                </div>';
+              }
+              else{
+                echo '<div class="container py-4">
+                  <h1 class="color_o fw-bold">Add Your Food Menu</h1>
+                  <p class="text-o">RESTAURANT MENU</p>
+                  <p class="text-o">Register First</p>
+                </div>
+                <div class="container py-4">
+                  <h1 class="color_o fw-bold">Add Your Food Menu</h1>
+                  <p class="text-o">RESTAURANT MENU</p>
+                  <button class="ms-auto me-auto btn btn-lg bg_orange text-white" data-bs-target="#RestaurantMenuModal" data-bs-toggle="modal">Add / Edit Menus</button>
+                </div>';
+              }
+      ?>
+
+    <div class="modal fade" id="RestaurantMenuModal" data-bs-backdrop="static" tabindex="-1"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark px-4">
+          <div class="ms-auto mt-2">
+            <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
+              data-bs-dismiss="modal" aria-label="Close">
+              <i class="bi bi-x text-25 fw-bold"></i>
+            </button>
+          </div>
+          <div class="modal-body pt-0">
+            <form id="restaurant-menu-form" enctype="multipart/form-data" method="post">
+              <h3 class="modal-title pb-2" id="exampleModalLabel">Add Menu</h3>
+              <div class="mb-3">
+                <label for="chooseRestaurant">Select Your Restaurant</label>
+                <select class="form-select btn btn-lg bg_orange text-black" aria-label="exampleSelectMenu">
+                  <option selected>Choose Your Restaurant</option>
+                  <option value="dhakamukki">Dhaka Mukki</option>
+                  <option value="kingsman">KingsMan</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="select-multiple">Select Category:</label>
+                <select class="form-control" id="select-multiple" multiple>
+                  <option value="Gujarati">Gujarati</option>
+                  <option value="Punjabi">Punjabi</option>
+                  <option value="SouthIndian">South Indian</option>
+                  <option value="Chinese">Chinese</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="add-category">Add Category:</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="add-category" placeholder="Enter Category name...">
+                  <div class="input-group-append">
+                    <button class="ms-auto me-auto btn bg_orange text-white" id="add-category-btn">Add</button>
+                  </div>
+                </div>
+              </div>  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
   <section class="pt-4 footer" id="contact">
     <div class="container">
       <div class="row justify-content-between">
@@ -215,5 +283,4 @@
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
   <script src="handle.js"></script>
-
 </body>

@@ -3,21 +3,24 @@ const loginBtn = document.getElementById("loginClass");
 const logoutBtn = document.getElementById("logoutClass");
 const registerBtn = document.getElementById("registerClass");
 
-registerBtn.addEventListener('click', () =>{
-    console.log("register clicked");
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", '../Back-end/Login_Signup/signup.php', true);
-    xhr.onload = () => {
-        if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200){
-                let data = xhr.responseText;
-                console.log(data);
+document.addEventListener('DOMContentLoaded', () => {
+    registerBtn.addEventListener('click', () => {
+        console.log("register clicked");
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", '../Back-end/Login_Signup/signup.php', true);
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.responseText;
+                    console.log(data);
+                }
             }
-        }
-    };
-    var formData = new FormData(document.getElementById("register-form"));
-    xhr.send(formData);
-});
+        };
+        var formData = new FormData(document.getElementById("register-form"));
+        xhr.send(formData);
+    });
+})
+
 
 const signupform = document.getElementById("signup-form");
 

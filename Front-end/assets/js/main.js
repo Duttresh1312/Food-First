@@ -4,7 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   // "use strict";
 
   /**
@@ -108,7 +108,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -117,7 +117,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -127,7 +127,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -166,9 +166,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -176,7 +176,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
@@ -251,36 +251,36 @@
 
   const loginForm = document.getElementById("login-form");
   const signupForm = document.getElementById("signup-form");
-  
+
   const loginLink = document.getElementById("login-link");
   const signupLink = document.getElementById("signup-link");
-  
+
   signupForm.style.display = "none";
-  
-  loginLink.addEventListener("click", function(e) {
+
+  loginLink.addEventListener("click", function (e) {
     e.preventDefault();
     loginForm.style.display = "block";
     signupForm.style.display = "none";
   });
-  
-  signupLink.addEventListener("click", function(e) {
+
+  signupLink.addEventListener("click", function (e) {
     e.preventDefault();
     signupForm.style.display = "block";
     loginForm.style.display = "none";
   });
-  
+
   function showLoginForm() {
     loginForm.style.display = "block";
     signupForm.style.display = "none";
   }
-  
+
   function showSignupForm() {
     signupForm.style.display = "block";
     loginForm.style.display = "none";
   }
 
   const registerUser = document.getElementById("register-user");
-  registerUser.addEventListener("click", function(e){
+  registerUser.addEventListener("click", function (e) {
     e.preventDefault();
     signupForm.style.display = "block";
     loginForm.style.display = "none"
@@ -288,21 +288,42 @@
 
   function down(min) {
     document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) - 1;
-      if (document.getElementById("myNumber").value <= parseInt(min)) {
-        document.getElementById("myNumber").value = min;
+    if (document.getElementById("myNumber").value <= parseInt(min)) {
+      document.getElementById("myNumber").value = min;
     }
   }
   function up(max) {
     document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;
-      if (document.getElementById("myNumber").value >= parseInt(max)) {
-          document.getElementById("myNumber").value = max;
-      }
+    if (document.getElementById("myNumber").value >= parseInt(max)) {
+      document.getElementById("myNumber").value = max;
+    }
   }
-  
+
   function Del() {
     document.getElementById("orderCard").remove();
   }
-  
-  
 
-})()
+  // Select the DOM elements
+  const selectMultiple = document.getElementById('select-multiple');
+  const addCategoryInput = document.getElementById('add-category');
+  const addCategoryButton = document.getElementById('add-category-btn');
+
+  // Add an event listener to the "Add" button
+  addCategoryButton.addEventListener('click', () => {
+    console.log("Event fired");
+    const newOptionValue = addCategoryInput.value.trim();
+    // Check if the input is not empty and the option doesn't already exist
+    if (newOptionValue !== '' && !selectMultiple.options.namedItem(newOptionValue)) {
+      console.log("within IF");
+      // Create a new option element and append it to the select dropdown
+      const newOption = document.createElement('option');
+      newOption.value = newOptionValue;
+      newOption.textContent = newOptionValue;
+      selectMultiple.appendChild(newOption);
+
+      // Reset the input field
+      addCategoryInput.value = '';
+    }
+  });
+
+})

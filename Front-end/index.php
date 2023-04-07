@@ -131,7 +131,7 @@
               else{
                 echo '<div class="dropdown-center">
                   <button type="button" class="btn btn-outline-warning btn-lg"  href="" data-bs-toggle="modal" data-bs-target="#RegisterModal" id="register-user">Register As user</button>
-                  <a href="restaurant_portal.html"><button type="button" class="btn btn-outline-warning btn-lg">Register As Restaurant</button></a>
+                  <a href="restaurant_portal.php"><button type="button" class="btn btn-outline-warning btn-lg">Register As Restaurant</button></a>
               </div>';
               }
       ?>
