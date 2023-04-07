@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$_SESSION['loggedin'] = false;
+$_SESSION['signined'] = false;
     include_once "dbconnect.php";
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -10,9 +10,9 @@ $_SESSION['loggedin'] = false;
     }
 
     if($email && $password){
-        $sql = mysqli_query($conn, "SELECT * FROM user WHERE email = " .$email. " AND password = ".$password. "");
+        $sql = mysqli_query($conn, "SELECT * FROM hotel WHERE email = " .$email. " AND password = ".$password. "");
         if(mysqli_num_rows($sql) == 1){
-            $_SESSION['loggedin'] = true;
+            $_SESSION['signined'] = true;
             echo "success";     
         }else{
             echo "$email - This email not Exist!";

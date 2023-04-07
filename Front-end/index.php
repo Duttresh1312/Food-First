@@ -27,7 +27,7 @@
         <div class="logo">
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.jpg" alt="" class="img-fluid"></a> -->
-          <a href="index.html">FOOD FIRST</a>
+          <a href="index.php">FOOD FIRST</a>
         </div>
 
         <nav id="navbar" class="navbar">
@@ -69,7 +69,6 @@
                     </button>
                 </div>
                 <div class="modal-body pt-0">
-
                     <form id="login-form" method="post">
                         <h1 class="modal-title pb-2" id="exampleModalLabel">Login</h1>
                         <div class="mb-3">
@@ -111,9 +110,7 @@
                             <button type="submit" id="signupClass" class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Signup</button>
                         </div>
                     </form>
-
                 </div>
-                
             </div>
         </div>
         </div>
@@ -134,7 +131,7 @@
               else{
                 echo '<div class="dropdown-center">
                   <button type="button" class="btn btn-outline-warning btn-lg"  href="" data-bs-toggle="modal" data-bs-target="#RegisterModal" id="register-user">Register As user</button>
-                  <a href="restaurant_portal.php"><button type="button" class="btn btn-outline-warning btn-lg">Register As Restaurant</button></a>
+                  <a href="restaurant_portal.html"><button type="button" class="btn btn-outline-warning btn-lg">Register As Restaurant</button></a>
               </div>';
               }
       ?>

@@ -43,7 +43,7 @@
               }
               else{
                 echo '<li>
-                <a class="getstarted scrollto" id="restaurantloginclass" href="">Log in</a>
+                <a class="getstarted scrollto" id="restaurantloginclass" data-bs-toggle="modal" data-bs-target="#RestaurantLoginModal" href="">Log in</a>
                 </li>';
               }
             ?>
@@ -51,10 +51,36 @@
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
         <!-- RESTAURANT signup/ login-->
-
-
-      </div><!-- End Header Container -->
-    </div>
+        <div class="modal fade" id="RestaurantLoginModal" data-bs-backdrop="static" tabindex="-1"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark px-4">
+              <div class="ms-auto mt-2">
+                <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
+                  data-bs-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x text-25 fw-bold"></i>
+                </button>
+              </div>
+              <form id="login-form" method="post">
+                <h1 class="modal-title pb-2" id="exampleModalLabel">Login</h1>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+                    name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword1" name="password" placeholder="Password"
+                    required>
+                </div>
+                <div class="px-4 text-center mb-4">
+                  <button type="submit" id="loginClass"
+                    class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Login</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- End Header Container -->
+        </div>
   </header>
 
   <section id="hero" class="d-flex align-items-center">
@@ -78,80 +104,47 @@
               </button>
             </div>
             <div class="modal-body pt-0">
-                <!-- Restaurant form goes here -->
-                <form id="restaurant-register-form" enctype="multipart/form-data" method="post">
-                  <h3 class="modal-title pb-2" id="exampleModalLabel">Restaurant Registration</h3>
-                  <div class="mb-3">
-                    <label for="restaurantName">Restaurant Name</label>
-                    <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="restaurantEmail">Restaurant Email</label>
-                    <input type="email" class="form-control" id="restaurantEmail"
-                      placeholder="Enter restaurant Email Id" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="restaurantContact">Restaurant Contact Details</label>
-                    <input type="text" class="form-control" id="restaurantContact"
-                      placeholder="Enter restaurant Contact Details" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="restaurantAddress">Restaurant Address</label>
-                    <textarea type="text" class="form-control" id="restaurantAddress"
-                      placeholder="Enter restaurant address" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                    <label for="restaurantTiming">Restaurant Timing:</label></br>
-                    <label for="restaurantTiming">From</label>
-                    <input type="time" class="form-control" id="restaurantTiming"
-                      placeholder="Enter restaurant timing information" required>
-                    <label for="restaurantTiming">To</label>
-                    <input type="time" class="form-control" id="restaurantTiming"
-                      placeholder="Enter restaurant timing information" required>
-                  </div>
-                  <div id="btnClass" class="px-4 text-center mb-4">
-                    <button type="button" id="restaurantRegisterClass"
-                      class="btn btn-warning outline border-0 rounded-5 px-4 py-2">Register</button>
-                  </div>
-                </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="modal fade" id="RestaurantRegisterModal" tabindex="-1" aria-labelledby="RestaurantModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content bg-dark px-4">
-            <div class="modal-header">
-              <h5 class="modal-title" id="RestaurantRegisterModal">Restaurant Registeration Form</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              </button>
-            </div>
-            <div class="modal-body">
-               Restaurant form goes here 
+              <!-- Restaurant form goes here -->
               <form id="restaurant-register-form" enctype="multipart/form-data" method="post">
+                <h3 class="modal-title pb-2" id="exampleModalLabel">Restaurant Registration</h3>
                 <div class="mb-3">
                   <label for="restaurantName">Restaurant Name</label>
-                  <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name">
+                  <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name"
+                    required>
                 </div>
                 <div class="mb-3">
                   <label for="restaurantEmail">Restaurant Email</label>
-                  <input type="text" class="form-control" id="restaurantEmail" placeholder="Enter restaurant Email Id">
+                  <input type="email" class="form-control" id="restaurantEmail" placeholder="Enter restaurant Email Id"
+                    required>
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantEmail">Restaurant password</label>
+                  <input type="password" class="form-control" id="restaurantPassword" placeholder="Enter restaurant Password"
+                    required>
                 </div>
                 <div class="mb-3">
                   <label for="restaurantContact">Restaurant Contact Details</label>
                   <input type="text" class="form-control" id="restaurantContact"
-                    placeholder="Enter restaurant Contact Details">
+                    placeholder="Enter restaurant Contact Details" required>
                 </div>
                 <div class="mb-3">
                   <label for="restaurantAddress">Restaurant Address</label>
-                  <input type="text" class="form-control" id="restaurantAddress" placeholder="Enter restaurant address">
+                  <textarea type="text" class="form-control" id="restaurantAddress"
+                    placeholder="Enter restaurant address" required></textarea>
                 </div>
                 <div class="mb-3">
-                  <label for="restaurantTiming">Restaurant Timing</label>
-                  <input type="text" class="form-control" id="restaurantTiming"
-                    placeholder="Enter restaurant timing information">
+                  <label for="restaurantGSTIN">GST Number</label>
+                  <input type="text" class="form-control" id="restaurantGSTIN"
+                    placeholder="Enter restaurant gst" required></input>
+                </div>
+                <div class="mb-3">
+                  <label for="restaurantTiming">Restaurant Timing:</label></br>
+                  <label for="restaurantTiming">From</label>
+                  <input type="time" class="form-control" id="restaurantTiming"
+                    placeholder="Enter restaurant timing information" required>
+                  <label for="restaurantTiming">To</label>
+                  <input type="time" class="form-control" id="restaurantTiming"
+                    placeholder="Enter restaurant timing information" required>
                 </div>
                 <div id="btnClass" class="px-4 text-center mb-4">
                   <button type="button" id="restaurantRegisterClass"
@@ -159,16 +152,12 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
           </div>
         </div>
-      </div> -->
-
+      </div>
   </section>
-
+ 
+  
   <section class="pt-4 footer" id="contact">
     <div class="container">
       <div class="row justify-content-between">

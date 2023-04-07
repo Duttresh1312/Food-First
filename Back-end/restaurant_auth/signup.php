@@ -1,8 +1,9 @@
 <?php
 session_start();
-$_SESSION['loggedin'] = false;
+$_SESSION['signined'] = false;
    include_once 'dbconnect.php';
    $name = mysqli_real_escape_string($conn, $_POST['username']);
+   $gst = mysqli_real_escape_string($conn, $_POST['gst']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -12,10 +13,10 @@ $_SESSION['loggedin'] = false;
    }
    if($name && $email && $password){
       if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-         $sql = "INSERT INTO `user` (`name`, `email`, `password`, `role`) VALUES ('$name', '$email', '$password', 'user')";
+         $sql = "INSERT INTO `hotel` (`name`, `gst`, `email`, `password`, `role`) VALUES ('$name', '$gst', '$email', '$password', 'hotel')";
          $result = mysqli_query($conn, $sql);
          if($result){
-            $_SESSION['loggedin'] = true;
+            $_SESSION['signined'] = true;
             echo "success";
          }
          header("Location: ../../Front-end/index.php");
