@@ -27,7 +27,7 @@
         <div class="logo">
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.jpg" alt="" class="img-fluid"></a> -->
-          <a href="index.php">FOOD FIRST</a>
+          <a href="index.html">FOOD FIRST</a>
         </div>
 
         <nav id="navbar" class="navbar">
@@ -48,7 +48,7 @@
                         <a class="getstarted scrollto dropdown-toggle" href="">Login</a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item fs-5 fw-bold" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">As User</a></li>
-                          <li><a class="dropdown-item fs-5 fw-bold" href="restaurant_portal.php">As Restaurant</a></li>
+                          <li><a class="dropdown-item fs-5 fw-bold" href="restaurant_portal.php ">As Restaurant</a></li>
                         </ul>
                       </li>';
               }

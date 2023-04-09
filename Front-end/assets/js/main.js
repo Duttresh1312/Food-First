@@ -303,27 +303,6 @@
     document.getElementById("orderCard").remove();
   }
 
-  // Select the DOM elements
-  const selectMultiple = document.getElementById('select-multiple');
-  const addCategoryInput = document.getElementById('add-category');
-  const addCategoryButton = document.getElementById('add-category-btn');
 
-  // Add an event listener to the "Add" button
-  addCategoryButton.addEventListener('click', () => {
-    console.log("Event fired");
-    const newOptionValue = addCategoryInput.value.trim();
-    // Check if the input is not empty and the option doesn't already exist
-    if (newOptionValue !== '' && !selectMultiple.options.namedItem(newOptionValue)) {
-      console.log("within IF");
-      // Create a new option element and append it to the select dropdown
-      const newOption = document.createElement('option');
-      newOption.value = newOptionValue;
-      newOption.textContent = newOptionValue;
-      selectMultiple.appendChild(newOption);
-
-      // Reset the input field
-      addCategoryInput.value = '';
-    }
-  });
-
+ 
 })

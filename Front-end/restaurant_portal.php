@@ -169,12 +169,8 @@
                 echo '<div class="container py-4">
                   <h1 class="color_o fw-bold">Add Your Food Menu</h1>
                   <p class="text-o">RESTAURANT MENU</p>
-                  <p class="text-o">Register First</p>
-                </div>
-                <div class="container py-4">
-                  <h1 class="color_o fw-bold">Add Your Food Menu</h1>
-                  <p class="text-o">RESTAURANT MENU</p>
                   <button class="ms-auto me-auto btn btn-lg bg_orange text-white" data-bs-target="#RestaurantMenuModal" data-bs-toggle="modal">Add / Edit Menus</button>
+                  <p class="text-o">Register First</p>
                 </div>';
               }
       ?>
@@ -190,40 +186,89 @@
             </button>
           </div>
           <div class="modal-body pt-0">
-            <form id="restaurant-menu-form" enctype="multipart/form-data" method="post">
-              <h3 class="modal-title pb-2" id="exampleModalLabel">Add Menu</h3>
-              <div class="mb-3">
-                <label for="chooseRestaurant">Select Your Restaurant</label>
-                <select class="form-select btn btn-lg bg_orange text-black" aria-label="exampleSelectMenu">
-                  <option selected>Choose Your Restaurant</option>
-                  <option value="dhakamukki">Dhaka Mukki</option>
-                  <option value="kingsman">KingsMan</option>
-                </select>
-              </div>
-              <div class="mb-3">
+            <h3 class="modal-title pb-2" id="exampleModalLabel">Add Category</h3>
+            <div class="mb-3">
+              <label for="chooseRestaurant">Select Your Restaurant</label>
+              <select class="form-select btn btn-lg bg_orange text-black" aria-label="exampleSelectMenu">
+                <option selected>Choose Your Restaurant</option>
+                <option value="dhakamukki">Dhaka Mukki</option>
+                <option value="kingsman">KingsMan</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <div class="form-group">
                 <label for="select-multiple">Select Category:</label>
                 <select class="form-control" id="select-multiple" multiple>
                   <option value="Gujarati">Gujarati</option>
                   <option value="Punjabi">Punjabi</option>
-                  <option value="SouthIndian">South Indian</option>
+                  <option value="South Indian">South Indian</option>
                   <option value="Chinese">Chinese</option>
                 </select>
-              </div>
-              <div class="mb-3">
                 <label for="add-category">Add Category:</label>
                 <div class="input-group">
                   <input type="text" class="form-control" id="add-category" placeholder="Enter Category name...">
-                  <div class="input-group-append">
-                    <button class="ms-auto me-auto btn bg_orange text-white" id="add-category-btn">Add</button>
-                  </div>
+                  <button class="ms-auto me-auto btn bg_orange text-white" id="add-category-btn">Add</button>
                 </div>
-              </div>  
-            </form>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="d-grid gap-2 col-6 mx-auto btn bg_orange text-white" id="category-submit-btn"
+                data-bs-toggle="modal" data-bs-target="#AddItemModal">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="AddItemModal" data-bs-backdrop="static" tabindex="-1"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark px-4">
+          <div class="ms-auto mt-2">
+            <button type="button" class="btn btn-light btn-sm btn-warning rounded-circle border-0"
+              data-bs-dismiss="modal" aria-label="Close">
+              <i class="bi bi-x text-25 fw-bold"></i>
+            </button>
+          </div>
+          <div class="modal-body pt-0">
+            <h3 class="modal-title pb-2" id="exampleModalLabel">Add Food Items</h3>
+            <div class="mb-3">
+              <label for="chooseRestaurant">Select Your Category</label>
+              <select class="form-select btn btn-lg bg_orange text-black" aria-label="exampleSelectMenu">
+                <option selected>Choose Your Category</option>
+                <option value="gujrati">Gujrati</option>
+                <option value="punjabi">Punjabi</option>
+                <option value="chinese">Chinese</option>
+                <option value="southIndian">South Indian</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="foodName" class="form-label">Food Name</label>
+              <input type="text" class="form-control" id="foodName" name="foodName" placeholder="Enter food name here"
+                required>
+            </div>
+            <div class="mb-3">
+              <label for="foodDescription" class="form-label">Food Description</label>
+              <textarea class="form-control" id="foodDescription" name="foodDescription" rows="3"
+                placeholder="Enter food description"></textarea>
+            </div>
+            <div class="mb-3">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked" style="margin-left: 10px; margin-top: 7px;">Food Avaliability</label>
+              </div>
+            </div>
+            <div class="mb-3 d-md-flex">
+              <button class="ms-auto me-auto btn bg_orange text-white" id="item-prev-btn" data-bs-toggle="modal" data-bs-target="#RestaurantMenuModal">Prev</button>
+              <button class="ms-auto me-auto btn bg_orange text-white" id="item-submit-btn">Submit</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     </div>
+
+
   </section>
 
   <section class="pt-4 footer" id="contact">
@@ -279,8 +324,8 @@
     </div>
   </section>
 
-  <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
+  <script src="/Front-end/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/Front-end/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/Front-end/assets/js/main.js"></script>
   <script src="handle.js"></script>
 </body>
