@@ -324,8 +324,8 @@
     </div>
   </section>
 
-  <script src="/Front-end/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/Front-end/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/Front-end/assets/js/main.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="handle.js"></script>
 </body>
